@@ -10,7 +10,7 @@
 
 FROM asciidoctor/docker-asciidoctor
 
-MAINTAINER deoren <deoren@users.noreply.github.com>
+LABEL deoren <deoren@users.noreply.github.com>
 
 COPY progit2-build-script.sh /progit2-build-script.sh
 
