@@ -1,0 +1,4 @@
+Run ./progit2-build-script.sh to start the build process
+When finished, the completed format will be placed in the /output/
+directory. This path is mapped to the current working directory
+on the Docker host.

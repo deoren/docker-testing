@@ -14,11 +14,10 @@ FROM ubuntu:16.04
 LABEL deoren <deoren@users.noreply.github.com>
 
 COPY build.sh /build.sh
+COPY greeting.txt /greeting.txt
 
-RUN echo "Run ./progit2-build-script.sh to start the build process"
-RUN echo "When finished, the completed format will be placed in the /output/"
-RUN echo "directory. This path is mapped to the current working directory"
-RUN echo "on the Docker host."
+# Display informational message upon initial launch
+CMD ['/bin/cat', 'greeting.txt']
 
 #ENTRYPOINT /bin/sh
 
