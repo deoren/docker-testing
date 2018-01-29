@@ -16,10 +16,8 @@ LABEL deoren <deoren@users.noreply.github.com>
 COPY build.sh /build.sh
 COPY greeting.txt /greeting.txt
 
-# Display informational message upon initial launch
-CMD ['/bin/cat', 'greeting.txt']
-
-#ENTRYPOINT /bin/sh
+# Display informational message upon initial launch, and then drop to a shell
+CMD ["/bin/sh", "-c", "cat /greeting.txt"]
 
 WORKDIR /
 VOLUME output /output
