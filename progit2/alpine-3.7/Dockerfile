@@ -13,11 +13,16 @@ FROM alpine:3.7
 
 LABEL deoren <deoren@users.noreply.github.com>
 
-COPY build.sh /build.sh
-COPY greeting.txt /greeting.txt
+ENV	DISTRO="alpine" \
+    PKG_LIST="git ruby ruby-dev alpine-sdk libxml2-dev zlib-dev python2 py-pip" \
+    UPDATE_COMMAND="apk update" \
+    INSTALL_COMMAND="apk add --nocache"
 
-# Display informational message upon initial launch, and then drop to a shell
-CMD ["/bin/sh", "-c", "cat /greeting.txt"]
+# Need to find a way to include this in the image for all distros without
+# duplicating the file.
+ADD https://raw.githubusercontent.com/deoren/docker-testing/master/progit2/common/build.sh /build.sh
+
+ENTRYPOINT ["/build.sh"]
 
 WORKDIR /
 VOLUME output /output

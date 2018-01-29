@@ -13,11 +13,16 @@ FROM ubuntu:16.04
 
 LABEL deoren <deoren@users.noreply.github.com>
 
-COPY build.sh /build.sh
-COPY greeting.txt /greeting.txt
+ENV	DISTRO="ubuntu-16.04" \
+    PKG_LIST="build-essential curl git-core ruby ruby-dev zlib1g-dev python python-dev python-pip" \
+    UPDATE_COMMAND="apt-get update" \
+    INSTALL_COMMAND="apt-get install -y"
 
-# Display informational message upon initial launch, and then drop to a shell
-CMD ["/bin/sh", "-c", "cat /greeting.txt"]
+# Need to find a way to include this in the image for all distros without
+# duplicating the file.
+ADD https://raw.githubusercontent.com/deoren/docker-testing/master/progit2/common/build.sh /build.sh
+
+ENTRYPOINT ["/build.sh"]
 
 WORKDIR /
 VOLUME output /output
