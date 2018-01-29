@@ -65,7 +65,7 @@ bundle exec rake
 # Build just epub
 #bundle exec asciidoctor-epub3 progit.asc
 
-if [ $?]; then
+if [ $? ]; then
 
     echo "Build successful."
     cp -f progit.* /output/
