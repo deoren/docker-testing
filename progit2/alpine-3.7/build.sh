@@ -30,7 +30,7 @@ gem install bundler --no-ri --no-rdoc
 bundle install --path vendor/bundle
 
 # Build all formats
-rake
+bundle exec rake
 
 # Build just epub
 #bundle exec asciidoctor-epub3 progit.asc
