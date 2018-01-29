@@ -13,7 +13,7 @@ MAINTAINER deoren <deoren@users.noreply.github.com>
 
 COPY progit2-build-script.sh /progit2-build-script.sh
 
-#RUN /progit2-build-script.sh && /bin/bash
-ENTRYPOINT /progit2-build-script.sh && /bin/bash
+RUN echo "Run /progit2-build-script.sh to start the build process"
+ENTRYPOINT /bin/bash
 
 VOLUME /home/ubuntu/Desktop/output /output
