@@ -22,5 +22,5 @@ RUN echo "on the Docker host."
 
 #ENTRYPOINT /bin/sh
 
-WORKDIR /output
+WORKDIR /
 VOLUME output /output
