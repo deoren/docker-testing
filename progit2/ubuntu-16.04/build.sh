@@ -13,10 +13,22 @@ GIT_REPO="https://github.com/progit/progit2.git"
 # are known to generate valid epub output.
 BRANCH="rework_files"
 
-REQ_PKGS="git ruby ruby-dev alpine-sdk libxml2-dev zlib-dev"
+# Not 100% sure that 'python-pip' is needed.
+REQ_PKGS="build-essential curl git-core ruby ruby-dev zlib1g-dev python python-dev python-pip"
 
-apk update
-apk add --no-cache $REQ_PKGS
+
+
+
+apt-get update
+
+# Upgrade existing packages
+apt-get dist-upgrade -y
+
+# Install dependencies
+apt-get install -y $REQ_PKGS
+
+# Toss downloaded archive files
+apt-get clean
 
 git clone $GIT_REPO
 cd progit2/
@@ -25,8 +37,9 @@ cd progit2/
 # are known to generate valid epub output.
 git checkout $BRANCH
 
+# Install required ruby gem needed to install gem dependencies
 gem install bundler --no-ri --no-rdoc
-gem install rake --no-ri --no-rdoc
+
 bundle install --path vendor/bundle
 
 # Build all formats
@@ -35,6 +48,5 @@ rake
 # Build just epub
 #bundle exec asciidoctor-epub3 progit.asc
 
-# Add commands here to copy over the generated files before the
-# container is shut down
+# Copy over the generated files before the container is shut down
 cp -f progit.* /output/
