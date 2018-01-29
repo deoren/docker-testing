@@ -26,5 +26,6 @@ RUN chmod +x /build.sh
 
 ENTRYPOINT ["/build.sh"]
 
-WORKDIR /
-VOLUME output /output
+# Relies on the user specifying the bind mount path
+WORKDIR /output
+VOLUME /output

@@ -19,5 +19,10 @@ will be.
 1. Build image
     - `sudo docker build -t progit2-build:0.1 $PWD/`
 1. Run container based on the new image
-    - `sudo docker run -ti progit2-build:0.1`
+    1. `mkdir -p output`
+    1. `sudo docker run -ti -v $PWD/output:/output progit2-build:0.1`
 
+When the container finishes building the content the files will be placed
+in the `/output` directory within the container. That directory was mapped
+to `output` directory within your current working directory when you
+ran `sudo docker run`. Look there for the newly generated files.
