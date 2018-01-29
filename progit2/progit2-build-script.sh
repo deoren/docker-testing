@@ -30,3 +30,7 @@ rake
 
 # Build just epub
 #bundle exec asciidoctor-epub3 progit.asc
+
+# Add commands here to copy over the generated files before the
+# container is shut down
+copy -f progit.* /output/
