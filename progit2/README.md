@@ -4,7 +4,7 @@
 
 1. `cd Desktop`
 1. `git clone https://github.com/deoren/docker-testing`
-1. `cp docker-testing/progit2/progit2-build-script.sh .`
+1. `cd docker-testing/progit2`
 1. `mkdir output`
 
 ## Build
