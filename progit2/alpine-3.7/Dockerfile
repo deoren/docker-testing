@@ -22,6 +22,8 @@ ENV	DISTRO="alpine" \
 # duplicating the file.
 ADD https://raw.githubusercontent.com/deoren/docker-testing/master/progit2/common/build.sh /build.sh
 
+RUN chmod +x /build.sh
+
 ENTRYPOINT ["/build.sh"]
 
 WORKDIR /
