@@ -65,7 +65,10 @@ sleep 1
 bundle exec rake
 
 # Build just epub
-#bundle exec asciidoctor-epub3 progit.asc
+#   bundle exec asciidoctor-epub3 progit.asc
+
+# Build just epub, disable highlighting
+#   bundle exec asciidoctor-epub3 -a source-highlighter! progit.asc
 
 if [ $? ]; then
 
