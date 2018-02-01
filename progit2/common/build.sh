@@ -22,8 +22,8 @@ cat << HEREDOC
     1. This container is about to build $CONTENT_NAME.
 
     2. When finished, the completed formats will be placed in the /output/
-    directory. This path is mapped to the current working directory
-    on the Docker host.
+       directory. This path is mapped to the current working directory
+       on the Docker host.
 
 HEREDOC
 
