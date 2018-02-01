@@ -27,8 +27,8 @@ cat << HEREDOC
 
 HEREDOC
 
-# If this is the first time booting wait enough for the user to read
-# the message, otherwise go ahead and start the build process.
+# If this is the first time booting, wait long enough for the user
+# to read the message, otherwise go ahead and start the build process.
 if [ ! -f '/first_boot' ]; then
     sleep 10
     touch /first_boot
