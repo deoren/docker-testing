@@ -9,12 +9,7 @@
 CONTENT_NAME="Pro Git 2nd Edition"
 GIT_REPO="https://github.com/progit/progit2"
 
-#BRANCH="master"
-# Temp branch with Gemfile modified to use versions of gems that
-# are known to generate valid epub output.
-# Temp branch of mine where I'm overriding the asciidoctor gem version to use
-# the latest from 'master'.
-BRANCH="rework_files"
+BRANCH="master"
 
 # Display the initial greeting upon container start
 cat << HEREDOC
