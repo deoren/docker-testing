@@ -9,7 +9,7 @@
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 sudo apt-get update
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -23,7 +23,7 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install -y docker-ce
 
 # Run pre-flight tests ...
 sudo docker run hello-world
